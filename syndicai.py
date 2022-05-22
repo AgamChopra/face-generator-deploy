@@ -6,7 +6,7 @@ from random import randint
 
 class PythonPredictor:
     def __init__(self,config):
-        self.model = build_model().cpu()
+        self.model = build_model()
 
     def predict(self):
         resolution = 256
