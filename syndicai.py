@@ -8,7 +8,7 @@ class PythonPredictor:
     def __init__(self,config):
         self.model = build_model()
 
-    def forward(self,resolution=256):
+    def predict(self,resolution=256):
         if resolution > 512:
             resolution = 512
         N = 64
