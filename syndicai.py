@@ -4,7 +4,7 @@ from PIL import Image
 from random import randint
 
 
-class FaceGenerator:
+class PythonPredictor:
     def __init__(self):
         self.model = build_model()
 
