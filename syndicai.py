@@ -9,7 +9,7 @@ class PythonPredictor:
         self.model = build_model()
 
     def predict(self,payload):
-        resolution = payload["resolution"]
+        resolution = int(payload["resolution"])
         if resolution > 512:
             resolution = 512
         N = 64
