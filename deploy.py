@@ -1,7 +1,5 @@
 import torch.nn as nn
 import torch
-from PIL import Image
-from random import randint
 import base64
 from io import BytesIO
 
