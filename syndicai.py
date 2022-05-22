@@ -8,9 +8,8 @@ class PythonPredictor:
     def __init__(self,config):
         self.model = build_model()
 
-    def predict(self,resolution=256):
-        if resolution > 512:
-            resolution = 512
+    def predict(self):
+        resolution = 256
         N = 64
         with torch.no_grad(): 
             noise = torch.rand((N,1,10,10))
