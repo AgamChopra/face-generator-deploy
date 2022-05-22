@@ -5,7 +5,7 @@ from random import randint
 
 
 class PythonPredictor:
-    def __init__(self):
+    def __init__(self,config):
         self.model = build_model()
 
     def forward(self,resolution=256):
