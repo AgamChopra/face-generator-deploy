@@ -12,7 +12,7 @@ class PythonPredictor:
         resolution = 256
         N = 64
         with torch.no_grad(): 
-            noise = torch.rand((N,1,10,10))
+            noise = torch.rand((N,1,10,10)).cpu()
         opt = self.model(noise)
         i = randint(0,N-1)
         output = ((opt[i].detach().numpy().T)*255).astype('int')[:,:,::-1]
