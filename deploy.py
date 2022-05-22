@@ -43,8 +43,8 @@ class GeneratorA(nn.Module): # (N,100,1,1) -> (N,3,128,128)
 
 def build_model():
     with torch.no_grad():    
-        model = GeneratorA(3)
-        model.load_state_dict(torch.load("Gen_temp.pt"))
+        model = GeneratorA(3).cpu()
+        model.load_state_dict(torch.load("Gen_temp.pt",map_location=torch.device('cpu')))
     return model.eval()
 
 
