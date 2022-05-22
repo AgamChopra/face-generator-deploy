@@ -46,21 +46,3 @@ def build_model():
         model = GeneratorA(3).cpu()
         model.load_state_dict(torch.load("Gen_temp.pt",map_location=torch.device('cpu')))
     return model.eval()
-
-
-def main():
-    model = build_model()
-    N = 64
-    with torch.no_grad(): 
-        noise = torch.rand((N,1,10,10))
-    opt = model(noise)
-
-    i = randint(0,N-1)
-    output = ((opt[i].detach().numpy().T)*255).astype('int')[:,:,::-1]
-    img = Image.fromarray(output.astype('uint8'), 'RGB')
-    img = img.resize((256,256))
-    img.show()
-    
-
-if __name__ == "__main__":
-    main()
